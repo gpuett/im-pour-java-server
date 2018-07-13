@@ -31,8 +31,8 @@ public class App {
         CorsFilter.apply();
         Sql2o sql2o;
         if(isProduction) {
-            String connectionString = ""; //Heroku credentials
-            sql2o = new Sql2o(connectionString, "", "");
+            String connectionString = "jdbc:postgresql://ec2-54-83-60-13.compute-1.amazonaws.com:5432/dbfsfp845ehbis";
+            sql2o = new Sql2o(connectionString,"xolofylayawrgb", "889ccdef4d291e1685b75b87bf6eeb9adb3f04eb89e1db2cf3103f3748edde38");
         } else {
             String connectionString = "jdbc:postgresql://localhost:5432/pour_bars";
             sql2o = new Sql2o(connectionString, null, null);
