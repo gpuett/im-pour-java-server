@@ -19,7 +19,18 @@ public class BarTest {
         assertEquals("C Bar", bar.getName());
     }
 
+    @Test
+    public void getAddress() {
+        Bar bar = setupBar();
+        assertEquals("426 SW Washington St, Portland, OR 97204", bar.getAddress());
+    }
 
+    @Test
+    public void setAddress() {
+        Bar bar = setupBar();
+        bar.setAddress("666 SE Grand Ave, Portland, OR 97202");
+        assertEquals("666 SE Grand Ave, Portland, OR 97202", bar.getAddress());
+    }
 
     //helper model
     public Bar setupBar() {
