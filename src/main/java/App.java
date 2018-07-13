@@ -58,6 +58,46 @@ public class App {
            }
         });
 
+        get("/bars/:id", "application/json", (request, response) -> {
+            int barId = Integer.parseInt(request.params("id"));
+            Bar barToFind = barDao.findById(barId);
+            if(barToFind == null) {
+                throw new ApiException(404, String.format("No bar with the id: '%s' exists", request.params("id")));
+            }
+            return gson.toJson(barToFind);
+        });
+
+        post("/bars/:id/update", "application/json", (request, response) -> {
+           int barId = Integer.parseInt(request.params("id"));
+           Bar updatedBar = gson.fromJson(request.body(), Bar.class);
+           barDao.update(barId, updatedBar.getName(), updatedBar.getAddress(), updatedBar.getPhone(), updatedBar.getDeal(), updatedBar.getHappyHour());
+           response.status(201);
+           return gson.toJson(barDao.findById(barId));
+        });
+
+        post("bars/:id/delete", "application/json", (request, response) -> {
+           int barId = Integer.parseInt(request.params("id"));
+           barDao.deleteById(barId);
+            return "{\"message\":\"Bar deleted\"}";
+        });
+
+        options("/*", (request, response) -> {
+            String accessControlRequestHeaders = request
+                    .headers("Access-Control-Request-Headers");
+            if (accessControlRequestHeaders != null) {
+                response.header("Access-Control-Allow-Headers",
+                        accessControlRequestHeaders);
+            }
+
+            String accessControlRequestMethod = request
+                    .headers("Access-Control-Request-Method");
+            if (accessControlRequestMethod != null) {
+                response.header("Access-Control-Allow-Methods",
+                        accessControlRequestMethod);
+            }
+            return "OK";
+        });
+
         //FILTERS
         exception(ApiException.class, (exception, request, response) -> {
             ApiException err = (ApiException) exception;
