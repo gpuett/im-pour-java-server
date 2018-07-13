@@ -39,14 +39,24 @@ public class Sql2oBarDaoTest {
 
     @Test
     public void getAll() {
+        Bar bar1 = setupBar();
+        Bar bar2 = setupBar();
+        assertEquals(2, barDao.getAll().size());
     }
 
     @Test
     public void findById() {
+        Bar bar1 = setupBar();
+        Bar bar2 = setupBar();
+        assertEquals(bar1, barDao.findById(bar1.getId()));
     }
 
     @Test
     public void update() {
+        Bar bar = setupBar();
+        barDao.update(bar.getId(), "C-Bar", "666 SE Grand", "503-666-6666", "free drinks", "11pm-1am");
+        Bar foundBar = barDao.findById(bar.getId());
+        assertNotEquals("Kelly's Olympian", foundBar.getName());
     }
 
     @Test
