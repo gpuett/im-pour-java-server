@@ -8,13 +8,15 @@ public class Bar {
     private String address;
     private String phone;
     private String deal;
+    private String happyHour;
     private int id;
 
-    public Bar(String name, String address, String phone, String deal) {
+    public Bar(String name, String address, String phone, String deal, String happyHour) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.deal = deal;
+        this.happyHour = happyHour;
     }
 
     public String getName() {
@@ -45,8 +47,17 @@ public class Bar {
         return deal;
     }
 
+    public String getHappyHour() {
+        return happyHour;
+    }
+
+    public void setHappyHour(String happyHour) {
+        this.happyHour = happyHour;
+    }
+
     public void setDeal(String deal) {
         this.deal = deal;
+
     }
 
     public int getId() {

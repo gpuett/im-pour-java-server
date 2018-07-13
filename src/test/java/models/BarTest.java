@@ -1,17 +1,19 @@
 package models;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BarTest {
 
-    @Before
-    public void setUp() throws Exception {
+    @Test
+    public void getName() {
+        Bar bar = setupBar();
+        assertEquals("Kelly's Olympian", bar.getName());
     }
 
-    @After
-    public void tearDown() throws Exception {
+    //helper model
+    public Bar setupBar() {
+        return new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "4pm-7pm");
     }
 }
