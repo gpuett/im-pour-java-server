@@ -61,10 +61,18 @@ public class Sql2oBarDaoTest {
 
     @Test
     public void deleteById() {
+        Bar bar1 = setupBar();
+        Bar bar2 = setupBar();
+        barDao.deleteById(bar2.getId());
+        assertEquals(1, barDao.getAll().size());
     }
 
     @Test
     public void clearAll() {
+        Bar bar1 = setupBar();
+        Bar bar2 = setupBar();
+        barDao.clearAll();
+        assertEquals(0, barDao.getAll().size());
     }
 
     //helper model
