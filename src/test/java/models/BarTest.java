@@ -58,6 +58,26 @@ public class BarTest {
         assertEquals("free drinks", bar.getDeal());
     }
 
+    @Test
+    public void getHappyHour() {
+        Bar bar = setupBar();
+        assertEquals("4pm-7pm", bar.getHappyHour());
+    }
+
+    @Test
+    public void setHappyHour() {
+        Bar bar = setupBar();
+        bar.setHappyHour("11pm-1am");
+        assertEquals("11pm-1am", bar.getHappyHour());
+    }
+
+    @Test
+    public void setId() {
+        Bar bar = setupBar();
+        bar.setId(1);
+        assertEquals(1, bar.getId());
+    }
+
     //helper model
     public Bar setupBar() {
         return new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "4pm-7pm");
