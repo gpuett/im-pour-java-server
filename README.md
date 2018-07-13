@@ -17,8 +17,8 @@ A server created with Java and the spark framework. This web app is exclusively 
 
 ## Technologies Used
 * Java
-* Spark
 * PostgreSQL
+* Spark
 * Gradle
 * Maven
 * Heroku
