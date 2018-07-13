@@ -48,6 +48,16 @@ public class App {
            return gson.toJson(bar);
         });
 
+        get("/bars", "application/json", (request, response) -> {
+           System.out.println(barDao.getAll());
+           List<Bar> allBars = barDao.getAll();
+           if(allBars.size() > 0) {
+               return gson.toJson(allBars);
+           } else {
+               return "{\"message\":\"I'm sorry, but no bars are currently listed in the database.\"}";
+           }
+        });
+
         //FILTERS
         exception(ApiException.class, (exception, request, response) -> {
             ApiException err = (ApiException) exception;
