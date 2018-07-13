@@ -45,6 +45,19 @@ public class BarTest {
         assertEquals("503-666-6666", bar.getPhone());
     }
 
+    @Test
+    public void getDeal() {
+        Bar bar = setupBar();
+        assertEquals("$1 off draft beer, well drinks and wine", bar.getDeal());
+    }
+
+    @Test
+    public void setDeal() {
+        Bar bar = setupBar();
+        bar.setDeal("free drinks");
+        assertEquals("free drinks", bar.getDeal());
+    }
+
     //helper model
     public Bar setupBar() {
         return new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "4pm-7pm");
