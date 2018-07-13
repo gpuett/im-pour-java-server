@@ -37,21 +37,51 @@ public class Sql2oBarDao implements BarDao {
 
     @Override
     public Bar findById(int id) {
-        return null;
+        try (Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM bars WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Bar.class);
+        }
     }
 
     @Override
-    public void update(int id, String name, String address, String phone, String deal, String happyHour) {
-
+    public void update(int id, String newName, String newAddress, String newPhone, String newDeal, String newHappyHour) {
+        String sql = "UPDATE bars SET (name, address, phone, deal, happyHour) VALUES (:name, :address, :phone, :deal, :happyHour) WHERE id=:id";
+        try(Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("name", newName)
+                    .addParameter("address", newAddress)
+                    .addParameter("phone", newPhone)
+                    .addParameter("deal", newDeal)
+                    .addParameter("happyHour", newHappyHour)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 
     @Override
     public void deleteById(int id) {
+        String sql = "DELETE from bars WHERE id=:id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
 
     }
 
     @Override
     public void clearAll() {
+        String sql = "DELETE from bars";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql).executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
 
     }
 }
