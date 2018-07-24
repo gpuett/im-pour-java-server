@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="dao.Sql2oBarDaoTest" time="0.395" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="dao.Sql2oBarDaoTest" time="0.244" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.131-b11"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Guest/Desktop/im-pour-java-server"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Guest/desktop/im-pour-java-server"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -64,10 +64,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="dao.Sql2oBarDaoTest" name="getAll" time="0.229"/>
-  <testcase classname="dao.Sql2oBarDaoTest" name="update" time="0.052"/>
-  <testcase classname="dao.Sql2oBarDaoTest" name="findById" time="0.025"/>
-  <testcase classname="dao.Sql2oBarDaoTest" name="add" time="0.024"/>
-  <testcase classname="dao.Sql2oBarDaoTest" name="clearAll" time="0.033"/>
-  <testcase classname="dao.Sql2oBarDaoTest" name="deleteById" time="0.032"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="getAll" time="0.105"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="update" time="0.025"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="findById" time="0.026"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="add" time="0.019"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="clearAll" time="0.035"/>
+  <testcase classname="dao.Sql2oBarDaoTest" name="deleteById" time="0.034"/>
 </testsuite>
