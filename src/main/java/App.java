@@ -31,8 +31,8 @@ public class App {
         CorsFilter.apply();
         Sql2o sql2o;
         if(isProduction) {
-            String connectionString = "jdbc:postgresql://ec2-54-83-60-13.compute-1.amazonaws.com:5432/dbfsfp845ehbis";
-            sql2o = new Sql2o(connectionString,"xolofylayawrgb", "889ccdef4d291e1685b75b87bf6eeb9adb3f04eb89e1db2cf3103f3748edde38");
+            String connectionString = "jdbc:postgresql://ec2-50-17-189-165.compute-1.amazonaws.com:5432/d2vl553f8h740p";
+            sql2o = new Sql2o(connectionString,"qrgnlruedvrrih", "dcd244cc9eb61bf2279e3560b0c1ba5a53051f95cc2d0b5dd56073d114f381a2");
         } else {
             String connectionString = "jdbc:postgresql://localhost:5432/pour_bar";
             sql2o = new Sql2o(connectionString, null, null);
