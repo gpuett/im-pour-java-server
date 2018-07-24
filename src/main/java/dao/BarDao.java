@@ -13,7 +13,7 @@ public interface BarDao {
 
     Bar findById(int id);
 
-    void update(int id, String name, String address, String phone, String deal, String happyHour);
+    void update(int id, String name, String address, String phone, String deal, String happyHourStart, String happyHourEnd);
 
     void deleteById(int id);
 
