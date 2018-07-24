@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.2
--- Dumped by pg_dump version 10.2
+-- Dumped from database version 9.6.3
+-- Dumped by pg_dump version 9.6.3
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -44,7 +44,8 @@ CREATE TABLE bars (
     address character varying,
     phone character varying,
     deal character varying,
-    happyhour character varying
+    happyhourstart character varying,
+    happyhourend character varying
 );
 
 
@@ -55,7 +56,6 @@ ALTER TABLE bars OWNER TO "Guest";
 --
 
 CREATE SEQUENCE bars_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -83,7 +83,7 @@ ALTER TABLE ONLY bars ALTER COLUMN id SET DEFAULT nextval('bars_id_seq'::regclas
 -- Data for Name: bars; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY bars (id, name, address, phone, deal, happyhour) FROM stdin;
+COPY bars (id, name, address, phone, deal, happyhourstart, happyhourend) FROM stdin;
 \.
 
 
