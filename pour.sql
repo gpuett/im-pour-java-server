@@ -44,8 +44,8 @@ CREATE TABLE bars (
     address character varying,
     phone character varying,
     deal character varying,
-    happyhourstart character varying,
-    happyhourend character varying
+    happyhourstart time without time zone,
+    happyhourend time without time zone
 );
 
 

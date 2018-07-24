@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="11" failures="0" name="models.BarTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="models.BarTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.131-b11"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Guest/desktop/im-pour-java-server"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Guest/Desktop/im-pour-java-server"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -64,15 +64,17 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="models.BarTest" name="getHappyHour" time="0.001"/>
-  <testcase classname="models.BarTest" name="setHappyHour" time="0"/>
+  <testcase classname="models.BarTest" name="setHappyHourStart" time="0"/>
+  <testcase classname="models.BarTest" name="setHappyHourEnd" time="0"/>
+  <testcase classname="models.BarTest" name="getHappyHourStart" time="0"/>
   <testcase classname="models.BarTest" name="getAddress" time="0"/>
   <testcase classname="models.BarTest" name="getDeal" time="0"/>
   <testcase classname="models.BarTest" name="getName" time="0"/>
   <testcase classname="models.BarTest" name="setId" time="0"/>
   <testcase classname="models.BarTest" name="setPhone" time="0"/>
+  <testcase classname="models.BarTest" name="getHappyHourEnd" time="0"/>
   <testcase classname="models.BarTest" name="setAddress" time="0"/>
   <testcase classname="models.BarTest" name="getPhone" time="0"/>
-  <testcase classname="models.BarTest" name="setDeal" time="0.001"/>
+  <testcase classname="models.BarTest" name="setDeal" time="0"/>
   <testcase classname="models.BarTest" name="setName" time="0"/>
 </testsuite>
