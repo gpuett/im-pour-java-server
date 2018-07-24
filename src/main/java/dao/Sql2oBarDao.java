@@ -15,7 +15,7 @@ public class Sql2oBarDao implements BarDao {
 
     @Override
     public void add(Bar bar) {
-        String sql = "INSERT INTO bars (name, address, phone, deal, happyHour) VALUES (:name, :address, :phone, :deal, :happyHour)";
+        String sql = "INSERT INTO bars (name, address, phone, deal, happyHourStart, happyHourEnd) VALUES (:name, :address, :phone, :deal, :happyHourStart, :happyHourEnd)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(bar)
@@ -45,15 +45,16 @@ public class Sql2oBarDao implements BarDao {
     }
 
     @Override
-    public void update(int id, String newName, String newAddress, String newPhone, String newDeal, String newHappyHour) {
-        String sql = "UPDATE bars SET (name, address, phone, deal, happyHour) VALUES (:name, :address, :phone, :deal, :happyHour) WHERE id=:id";
+    public void update(int id, String newName, String newAddress, String newPhone, String newDeal, String newHappyHourStart, String newhappyHourEnd) {
+        String sql = "UPDATE bars SET (name, address, phone, deal, happyHourStart, happyHourEnd) = (:name, :address, :phone, :deal, :happyHourStart, :happyHourEnd) WHERE id=:id";
         try(Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("name", newName)
                     .addParameter("address", newAddress)
                     .addParameter("phone", newPhone)
                     .addParameter("deal", newDeal)
-                    .addParameter("happyHour", newHappyHour)
+                    .addParameter("happyHourStart", newHappyHourStart)
+                    .addParameter("happyHourEnd", newhappyHourEnd)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

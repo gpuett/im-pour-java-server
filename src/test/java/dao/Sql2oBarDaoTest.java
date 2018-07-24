@@ -14,7 +14,7 @@ public class Sql2oBarDaoTest {
     @BeforeClass
     public static void setUp() throws Exception {
         String connectionString = "jdbc:postgresql://localhost:5432/pour_bar_test";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        Sql2o sql2o = new Sql2o(connectionString, null, null);
         barDao = new Sql2oBarDao(sql2o);
         conn = sql2o.open();
     }
@@ -54,7 +54,7 @@ public class Sql2oBarDaoTest {
     @Test
     public void update() {
         Bar bar = setupBar();
-        barDao.update(bar.getId(), "C-Bar", "666 SE Grand", "503-666-6666", "free drinks", "11pm-1am");
+        barDao.update(bar.getId(), "C-Bar", "666 SE Grand", "503-666-6666", "free drinks", "16:00:00", "19:00:00");
         Bar foundBar = barDao.findById(bar.getId());
         assertNotEquals("Kelly's Olympian", foundBar.getName());
     }
@@ -77,7 +77,7 @@ public class Sql2oBarDaoTest {
 
     //helper model
     public Bar setupBar() {
-        Bar bar =  new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "4pm-7pm");
+        Bar bar =  new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "16:00:00", "19:00:00");
         barDao.add(bar);
         return bar;
     }

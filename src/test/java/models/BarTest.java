@@ -59,16 +59,29 @@ public class BarTest {
     }
 
     @Test
-    public void getHappyHour() {
+    public void getHappyHourStart() {
         Bar bar = setupBar();
-        assertEquals("4pm-7pm", bar.getHappyHour());
+        assertEquals("16:00:00", bar.getHappyHourStart());
     }
 
     @Test
-    public void setHappyHour() {
+    public void setHappyHourStart() {
         Bar bar = setupBar();
-        bar.setHappyHour("11pm-1am");
-        assertEquals("11pm-1am", bar.getHappyHour());
+        bar.setHappyHourStart("23:00:00");
+        assertEquals("23:00:00", bar.getHappyHourStart());
+    }
+
+    @Test
+    public void getHappyHourEnd() {
+        Bar bar = setupBar();
+        assertEquals("19:00:00", bar.getHappyHourEnd());
+    }
+
+    @Test
+    public void setHappyHourEnd() {
+        Bar bar = setupBar();
+        bar.setHappyHourStart("23:00:00");
+        assertEquals("23:00:00", bar.getHappyHourStart());
     }
 
     @Test
@@ -80,6 +93,6 @@ public class BarTest {
 
     //helper model
     public Bar setupBar() {
-        return new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "4pm-7pm");
+        return new Bar("Kelly's Olympian", "426 SW Washington St, Portland, OR 97204", "503-228-3669", "$1 off draft beer, well drinks and wine", "16:00:00", "19:00:00");
     }
 }
